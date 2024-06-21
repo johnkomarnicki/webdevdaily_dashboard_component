@@ -1,6 +1,6 @@
-# dashboard-component
+# Dashboard-Component
 
-This template should help get you started developing with Vue 3 in Vite.
+This the solution for the [Dashboard Component](https://www.webdevdaily.io/challenges/dashboard-component-262) on [WebDevDaily] (https://www.webdevdaily.io)
 
 ## Recommended IDE Setup
 
