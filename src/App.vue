@@ -1,58 +1,56 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { ColumnDefinition, Row } from "@/types/type";
 import BaseTable from "./components/BaseTable.vue";
 import BaseBadge from "@/components/BaseBadge.vue";
 
-const columns: ColumnDefinition[] = [
+const columns = [
   { key: "status", label: "Status" },
   { key: "type", label: "Type" },
   { key: "price", label: "Price" },
   { key: "vendor", label: "Vendor" },
   { key: "icon" },
 ];
-const rows: Row[] = [
+
+const rows = [
   {
     status: "Completed",
     type: "Card payment",
     typeInfo: "Visa card **** 4831",
     price: "$182.94",
-    date: "Jan 17, 2022",
+    date: "Jan 17, 2024",
     vendor: "Amazon",
   },
   {
     status: "Completed",
     type: "Card payment",
-    typeInfo: "Visa card **** 4831",
-    price: "$182.94",
-    date: "Jan 17, 2022",
-    vendor: "Amazon",
+    typeInfo: "Mastercard **** 6642",
+    price: "$99.00",
+    date: "Jan 17, 2024",
+    vendor: "Facebook",
   },
   {
     status: "Pending",
-    type: "Card payment",
-    typeInfo: "Visa card **** 4831",
-    price: "$182.94",
-    date: "Jan 17, 2022",
-    vendor: "Amazon",
+    type: "Bank payment",
+    typeInfo: "Account ****882",
+    price: "$249.89",
+    date: "Jan 16, 2024",
+    vendor: "Netflix",
   },
   {
     status: "Canceled",
     type: "Card payment",
-    typeInfo: "Visa card **** 4831",
-    price: "$182.94",
-    date: "Jan 17, 2022",
-    vendor: "Amazon",
+    typeInfo: "Amex card **** 5666",
+    price: "$10.99",
+    date: "Jan 16, 2024",
+    vendor: "Amazon Prime",
   },
 ];
 </script>
 
 <template>
   <main class="min-h-screen grid place-items-center bg-[#FEE2E2] px-8">
-    <div
-      class="flex flex-col bg-white max-w-screen-lg w-full overflow-x-auto rounded-lg shadow p-7"
-    >
-      <div class="flex mb-8">
+    <div class="flex flex-col bg-white max-w-screen-lg w-full overflow-x-auto rounded-lg shadow">
+      <div class="flex p-8">
         <div>
           <h2 class="text-2xl font-bold mb-1">Transactions</h2>
           <p class="font-light">Lorem ipsum dolor sit amet, consectetur adipis.</p>

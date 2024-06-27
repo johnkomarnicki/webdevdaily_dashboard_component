@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import type { BadgeColors } from "@/types/type";
+
+type BadgeColors = "green" | "red" | "yellow";
 
 defineProps<{
   label: String;
@@ -15,10 +16,7 @@ const colorVariants = {
 </script>
 
 <template>
-  <div
-    class="flex items-center gap-1 py-1 px-3 rounded-full justify-start self-start"
-    :class="[colorVariants[color]]"
-  >
+  <div class="flex items-center gap-1 py-1 px-3 rounded-full" :class="[colorVariants[color]]">
     <Icon icon="oui:dot" width="1.2em" height="1.2em" />
     <span>
       {{ label }}

@@ -1,20 +1,24 @@
 <script setup lang="ts">
-import type { ColumnDefinition, Row } from "@/types/type";
+interface Column {
+  key: string;
+  [key: string]: any;
+}
+
 defineProps<{
-  rows: Row[];
-  columns: ColumnDefinition[];
+  rows: Array<{ [key: string]: any }>;
+  columns: Array<Column>;
 }>();
 </script>
 
 <template>
-  <div class="flex-1 w-full overflow-x-auto">
+  <div class="w-full overflow-x-auto">
     <table class="min-w-full">
       <tbody>
-        <tr v-for="row in rows">
-          <td
-            v-for="column in columns"
-            class="font-light whitespace-nowrap px-6 py-4 first-of-type:pl-0 last-of-type:pr-0"
-          >
+        <tr
+          v-for="row in rows"
+          class="hover:bg-gray-100 border-b cursor-pointer last-of-type:border-none"
+        >
+          <td v-for="column in columns" class="font-light whitespace-nowrap px-8 py-6">
             <slot :name="column.key" :row="row">
               {{ row[column.key] }}
             </slot>
